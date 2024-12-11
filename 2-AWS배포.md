@@ -181,11 +181,12 @@
     #       CGroup: /system.slice/jenkins.service
     ```
 
-3. 웹 브라우저에서 Jenkins에 접속한다.
+3. 웹 브라우저에서 ```http://IP주소:8080```주소로 Jenkins에 접속한다.
 
 4. 초기 관리자 비밀번호를 입력한다.
 
 5. 초기 설정 마법사를 따라 플러그인 설치 및 관리자 계정 생성을 완료한다.
+![젠킨스 설치](images/ec2-12.png)
 
 ## Github와 젠킨스 연동해서 애플리케이션 배포하기
 
@@ -217,3 +218,17 @@
 
     6. 등록이 완료되면 아래 내용을 확인할 수 있다.
     ![등록된 credential 확인](images/jenkins-5.png)
+
+3. Jenkins 플러그인 설치하기
+    1. 젠킨스 홈화면의 좌측 메뉴에서 "Jenkins 관리"를 클릭한다.
+    ![jenkins](images/jenkins-1.png)
+
+    2. "Jenkins 관리" 화면에서 "Plugins"을 클릭한다.
+    ![jenkins](images/jenkins-6.png)
+
+    3. "Plugins" 화면에서 "Available plugins"을 선택한 다음 입력필드에 ```Generic Webhook Trigger```과 ```GitHub Integration``` 플러그인을 검색해서 설치한다.
+    ![jenkins 플러그인](images/jenkins-7.png)
+
+    4. "Download progress" 화면의 하단에 체크박스를 체크하면, 설치가 완료된 후 자동으로 젠킨스가 재시작된다.
+    ![jenkins 플러그인](images/jenkins-8.png)
+
