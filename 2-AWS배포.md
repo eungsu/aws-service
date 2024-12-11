@@ -101,24 +101,24 @@
 ![호스팅 영역 세부정보](images/ec2-5.png)
 
 8. "호스팅 영역 세부 정보"의 레코드 중에서 아래의 정보를 복사한다.
-![호스팅 영역 세부정보](images/ec2-8.png)
+![레코드 정보 확인](images/ec2-8.png)
 
 9. 가비아에 접속 -> My가비아 -> 서비스 관리를 클릭한다.
 
 10. 서비스 관리에서 등록된 도메인을 확인하고 "관리" 버튼을 클릭한다.
-![호스팅 영역 세부정보](images/ec2-9.png)
+![도메인 관리](images/ec2-9.png)
 
 11. "도메인 정보" 조회 화면에서 네임서버 "설정"버튼을 클릭한다.
-![호스팅 영역 세부정보](images/ec2-10.png)
+![도메인 정보](images/ec2-10.png)
 
 12. "네임서버"설정 화면의 각 입력필드에 8번 항목에서 복사한 값을 하나씩 입력한다. 입력할 때 주소 끝의 "."은 입력하지 않는다.
-![호스팅 영역 세부정보](images/ec2-11.png)
+![네임서버 정보 입력](images/ec2-11.png)
 
 13. "호스팅 영역 세부 정보"에서 "레코드 생성"버튼을 레코드 생성 화면을 열고, 아래와 같이 정보를 입력하고, "레코드 생성"버튼을 클릭한다.
-![호스팅 영역 레코드 생성](images/ec2-6.png)
+![레코드 생성](images/ec2-6.png)
 
 14. "호스팅 영역 세부 정보"의 레코드 목록에서 새로 추가된 레코드를 확인할 수 있다.
-![호스팅 영역 레코드 생성](images/ec2-7.png)
+![새 레코드 확인](images/ec2-7.png)
 
 15. 도메인 연결 후 즉시 반영되지 않기 때문에, 1시간 혹은 2~3일 경과 후 도메인명으로 접속가능해 진다.
 
@@ -186,3 +186,34 @@
 4. 초기 관리자 비밀번호를 입력한다.
 
 5. 초기 설정 마법사를 따라 플러그인 설치 및 관리자 계정 생성을 완료한다.
+
+## Github와 젠킨스 연동해서 애플리케이션 배포하기
+
+1. [토크발행](https://github.com/settings/tokens) 접속해서 Github에서 Personal access tokens을 발행한다.
+    1. "Generate new Token" 버튼을 클릭하고, "Generate new token(classic)"를 선택한다.
+    ![토큰 발행](images/git-1.png)
+
+    2. 토큰 정보를 입력하고, "Select scopes" 항목에서 "repo", "workflow", "admin:repo_hook"을 체크한 다음
+    아래의 "Generate token"버튼을 클릭한다.  
+    ![토큰 발행](images/git-2.png)
+
+    3. 생성된 토큰을 복사한다.(토큰은 최초 생성할 때만 내용을 확인할 수 있다.)
+    ![토큰 확인](images/git-3.png)
+
+2. 젠킨스에 github 계정 정보 등록하기
+    1. 위에서 설치한 젠킨스에 접속하고, 이미 등록한 관리자 계정으로 로그인 한다.
+    ![jenkins](images/jenkins-1.png)
+
+    2. 메뉴에서 "Jenkins 관리"를 선택한다.
+
+    3. "Jenkins 관리" 화면에서 "Credentials"을 선택한다.
+    ![credentials 관리](images/jenkins-2.png)
+
+    4. "Store sceoped to Jenkins"의 "global"를 클릭하고, "Add Credentials"을 선택한다.
+    ![새 credential 등록](images/jenkins-3.png)
+
+    5. "New credentials"화면에서 아래의 정보를 입력하고 "Create"버튼을 클릭한다.
+    ![새 credential 등록](images/jenkins-4.png)
+
+    6. 등록이 완료되면 아래 내용을 확인할 수 있다.
+    ![등록된 credential 확인](images/jenkins-5.png)
