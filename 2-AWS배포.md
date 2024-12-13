@@ -67,6 +67,7 @@
     # 스왑 메모리가 할당된 것 확인
     free
     ```
+
 ## EC2 인스턴스에 젠킨스 실행환경 구성하기
 
 1. git 설치하기
@@ -155,7 +156,7 @@
     4. "Download progress" 화면의 하단에 체크박스를 체크하면, 설치가 완료된 후 자동으로 젠킨스가 재시작된다.
     ![jenkins 플러그인](images/jenkins-8.png)
 
-## Github 엑세스 토큰 발행 및 젠킨스에 Credential 등록하기
+# Jenkins와 Github 연동하기
 
 1. [토크발행](https://github.com/settings/tokens) 접속해서 Github에서 Personal access tokens을 발행한다.
     1. "Generate new Token" 버튼을 클릭하고, "Generate new token(classic)"를 선택한다.
@@ -185,6 +186,34 @@
 
     6. 등록이 완료되면 아래 내용을 확인할 수 있다.
     ![등록된 credential 확인](images/jenkins-5.png)
+
+3. Jenkins 프로젝트 등록하기
+    1. 젠킨스 홈 화면의 좌측 메뉴에서 "+ 새로운 Item" 메뉴를 클릭한다.  
+    ![새 프로젝트 등록](images/project-1.png)
+
+    2. "새 프로젝트 등록" 화면에서 "프로젝트 이름"과 "프로젝트 타입"을 선택한다.
+    ![새 프로젝트 등록](images/project-2.png)
+
+    3. "General"에서 "GitHub project"를 체크하고 "Project url"을 입력한다.
+    ![새 프로젝트 등록](images/project-3.png)
+
+    4. "소스 코드 관리"에서 "Get"을 선택하고, "Repository URL"과 "Credentials"를 추가한다.
+    ![새 프로젝트 등록](images/project-4.png)
+
+    5. "Build Steps"에서 "Execute shell"을 선택하고, 소스코드를 빌드하는 스크립트를 추가한다. "Save" 버튼을 클릭해서 프로젝트 설정정보를 저장한다.
+    ![새 프로젝트 등록](images/project-5.png)
+
+    6. "프로젝트" 화면에서 "지금 빌드"버튼을 클릭해서, 프로젝트 빌드 과정이 실행되는 테스트 한다.
+    ![새 프로젝트 빌드](images/project-6.png)
+
+    7. 빌드가 성공하면 아래와 같이 표시된다.  
+    ![새 프로젝트 빌드](images/project-7.png)
+
+    8. 빌드번호를 클릭하면, 해당 빌드에 대한 자세한 정보를 확인할 수 있다.
+    ![새 프로젝트 빌드](images/project-8.png)
+
+    9. "Console Output"을 클릭하면, 빌드실행 과정을 확인할 수 있다.
+    ![새 프로젝트 빌드](images/project-9.png)
 
 ## Github Web hook 설정하기
 
