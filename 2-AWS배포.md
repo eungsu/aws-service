@@ -141,7 +141,7 @@
 5. 초기 관리자 비밀번호를 입력한다.
 
 6. 초기 설정 마법사를 따라 플러그인 설치 및 관리자 계정 생성을 완료한다.
-![젠킨스 설치](images/ec2-12.png)
+![젠킨스 설치](images/ec2-12.png){:style="border:1px solid #red; border-radius: 7px; padding: 0px;" }
 
 7. 추가로 Jenkins 플러그인 설치하기
     1. 젠킨스 홈화면의 좌측 메뉴에서 "Jenkins 관리"를 클릭한다.
@@ -156,7 +156,7 @@
     4. "Download progress" 화면의 하단에 체크박스를 체크하면, 설치가 완료된 후 자동으로 젠킨스가 재시작된다.
     ![jenkins 플러그인](images/jenkins-8.png)
 
-# Jenkins와 Github 연동하기
+## Jenkins와 Github 연동하기
 
 1. [토크발행](https://github.com/settings/tokens) 접속해서 Github에서 Personal access tokens을 발행한다.
     1. "Generate new Token" 버튼을 클릭하고, "Generate new token(classic)"를 선택한다.
