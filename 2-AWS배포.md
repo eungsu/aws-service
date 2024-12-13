@@ -141,7 +141,7 @@
 5. 초기 관리자 비밀번호를 입력한다.
 
 6. 초기 설정 마법사를 따라 플러그인 설치 및 관리자 계정 생성을 완료한다.
-![젠킨스 설치](images/ec2-12.png){:style="border:1px solid #red; border-radius: 7px; padding: 0px;" }
+![젠킨스 설치](images/ec2-12.png)
 
 7. 추가로 Jenkins 플러그인 설치하기
     1. 젠킨스 홈화면의 좌측 메뉴에서 "Jenkins 관리"를 클릭한다.
